@@ -1,0 +1,16 @@
+# Example of usage:
+
+# See the meaning of each argument inside the bash scripts
+
+# convert data from AD3
+./prep-data.sh
+
+# assemble fragments
+# args: first_frag last_frag Nb_of_chains min_overlap max_overlap
+./assemble.sh 1 4 10000 1.2 3.5
+
+#create library of monomer conformations
+./build-library.sh
+
+# convert chains of fragments into full all-atom models
+./create_chains.sh
