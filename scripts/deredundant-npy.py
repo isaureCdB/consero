@@ -1,3 +1,4 @@
+# Copyright (C) Isaure Chauvot de Beauchene (CNRS))
 #!/usr/bin/env python3
 
 import sys, os, argparse

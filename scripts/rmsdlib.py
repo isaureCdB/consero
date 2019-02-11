@@ -1,3 +1,5 @@
+## Copyright (C) Sjoerd J. de Vries (TUM)
+
 import os
 import sys
 

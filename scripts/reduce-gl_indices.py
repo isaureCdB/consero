@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+## Copyright (C) Isaure Chauvot de Beauchene (CNRS)
 
 import sys
 from collections import defaultdict

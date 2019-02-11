@@ -1,3 +1,5 @@
+# Copyright (C) Isaure Chauvot de Beauchene & Sjoerd J. de Vries (TUM)
+
 #!/usr/bin/env python2
 
 import sys, json, argparse

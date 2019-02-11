@@ -1,3 +1,5 @@
+## Copyright (C) Isaure Chauvot de Beauchene (CNRS)
+
 #!/usr/bin/env python2
 
 import sys, os
