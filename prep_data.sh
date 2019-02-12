@@ -107,9 +107,9 @@ set -u -e
 ######################################################################
 echo "compute the RMSD of each pose toward the bound structure"
 ######################################################################
-rmsdnpy.py dp3r.npy boundfrag/g1-3r.pdb > frag1.rmsd
-rmsdnpy.py dp3r.npy boundfrag/g3-5r.pdb > frag3.rmsd
+$FRAG/rmsdnpy.py dp3r.npy --ref boundfrag/g1-3r.pdb > frag1.rmsd
+$FRAG/rmsdnpy.py dp3r.npy --ref boundfrag/g3-5r.pdb > frag3.rmsd
 #rmsdnpy.py dp3r.npy boundfrag/g5-7r.pdb > frag5.rmsd
 
-rmsdnpy.py dp3ar.npy boundfrag/g2-4r.pdb > frag2.rmsd
-rmsdnpy.py dp3ar.npy boundfrag/g4-6r.pdb > frag4.rmsd
+$FRAG/rmsdnpy.py dp3ar.npy --ref boundfrag/g2-4r.pdb > frag2.rmsd
+$FRAG/rmsdnpy.py dp3ar.npy --ref boundfrag/g4-6r.pdb > frag4.rmsd
