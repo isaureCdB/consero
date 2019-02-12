@@ -1,6 +1,7 @@
+# Copyright (C) Isaure Chauvot de Beauchene (CNRS))
+
 import sys, os
 import numpy as np
-sys.path.insert(0, os.environ["ATTRACTTOOLS"])
 from rmsdlib import multifit
 
 def npy2to3(npy):
