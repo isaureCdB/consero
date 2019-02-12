@@ -7,6 +7,9 @@ export FRAG=$d/scripts
 
 LANG=en_US
 
+'''
+# If your input is a list of PDB files:
+
 ##################################################
 echo "Create a multi-pdb from AD3 output"
 ##################################################
@@ -24,6 +27,14 @@ for dp in dp3 dp3a; do
     cd ../
 done
 cd ../
+'''
+
+# If your input is a numpy array of coordinates:
+cd $d/Docking_solutions
+for dp in dp3 dp3a; do
+    $FRAG/npy2pdb.py HE_$dp.npy template_HE_$dp.pdb > ../$dp.pdb
+done
+cd $d
 
 ##################################################
 echo "convert into all-atom / reduced formats"
