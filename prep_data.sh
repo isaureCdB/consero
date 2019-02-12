@@ -1,15 +1,15 @@
 # Example for heparin (IDS-SGN)*3
 
 d=`pwd`
-
 # TODO: give full path to /scripts directory
 export FRAG=$d/scripts
 
 LANG=en_US
+set -u -e
 
-'''
+
 # If your input is a list of PDB files:
-
+if false;then
 ##################################################
 echo "Create a multi-pdb from AD3 output"
 ##################################################
@@ -27,7 +27,7 @@ for dp in dp3 dp3a; do
     cd ../
 done
 cd ../
-'''
+fi
 
 # If your input is a numpy array of coordinates:
 cd $d/Docking_solutions
