@@ -1,12 +1,20 @@
 #!/usr/bin/env python2
 ## Copyright (C) Isaure Chauvot de Beauchene (CNRS)
 
-
 import sys, os
 sys.path.append(os.environ["ATTRACTTOOLS"])
 from rmsdlib import multifit
 import numpy as np
-from npy import npy2to3, npy3to2
+
+def npy2to3(npy):
+    if len(npy.shape) == 2:
+        if npy.shape[1] == 3:
+            npy = npy.reshape(1, npy.shape[0], npy.shape[1])
+        else:
+            npy = npy.reshape(npy.shape[0], int(npy.shape[1]/3), 3)
+    else:
+        assert len(npy.shape) == 3
+    return npy
 
 a = np.load(sys.argv[1])
 cutoff = float(sys.argv[2])

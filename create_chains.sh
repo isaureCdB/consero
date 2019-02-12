@@ -35,7 +35,7 @@ awk -v a=$g1 -v b=$g2 '$5>b{exit} $5>=a && $3=="C1"{print $4}' \
 cat /dev/null > libraries.txt
 
 # get the list of monomer libraries to be used for each residue
-for res in `cat resname`; do
+for res in `cat resnames.txt`; do
     echo monomers_library/$res.npy >> libraries.txt
 done
 
@@ -47,7 +47,7 @@ $FRAG/convert-merged-aa.py $name.npy $name-aa.npy \
 echo "Compute RMSD toward bound ligand"
 ######################################################
 awk -v a=$g1 -v b=$g2 '$5<=b && $5>=a' boundfrag/ligand-aa.pdb > /tmp/lig.pdb
-$FRAG/rmsdnpy.py $name-aa.npy /tmp/lig.pdb > $name.rmsd
+$FRAG/rmsdnpy.py $name-aa.npy --ref /tmp/lig.pdb > $name.rmsd
 
 echo "----------- best solutions ------------"
 echo "rank rmsd"

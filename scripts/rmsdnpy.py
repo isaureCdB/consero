@@ -14,7 +14,6 @@ def rmsdnpy(npy, refs, selatoms):
     b = refs[None,:,:,:]
     d = a - b
     SD = np.einsum("ijkl, ijkl -> ij", d, d)
-    print((np.shape(struc), np.shape(refs)), nat, file=sys.stderr)
     RMSD = np.sqrt(SD/nat)
     return RMSD
 
@@ -49,7 +48,6 @@ if args.atoms:
 
 rmsds = rmsdnpy(npy, refs, selatoms)
 rmsd = np.min(rmsds, axis=1)
-print(rmsd.shape)
 
 for i in range(len(rmsd)):
     print('%i %.2f'%(i+1, rmsd[i]))
