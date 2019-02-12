@@ -2,7 +2,6 @@
 ## Copyright (C) Isaure Chauvot de Beauchene (CNRS)
 
 import sys, os
-sys.path.append(os.environ["ATTRACTTOOLS"])
 from rmsdlib import multifit
 import numpy as np
 
