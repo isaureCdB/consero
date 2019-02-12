@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # Copyright (C) Isaure Chauvot de Beauchene & Sjoerd J. de Vries (TUM)
 
 import sys, numpy as np, weakref
@@ -39,7 +39,7 @@ postatoms = [npy3to2(np.load(f)) for f in args.postatoms]
 
 assert len(postatoms) == len(preatoms)
 
-print >> sys.stderr, "NFRAGS", nfrags
+print("NFRAGS", nfrags, file=sys.stderr)
 assert nfrags >= 2
 
 CLUSTERING = [10, 8, 6, 5, 4, 3.5, 3, 2.5, 2, 1.7, 1.5, 1.0, 0.5, 0.1, 0]
@@ -478,14 +478,14 @@ for n in range(nfrags):
       if not len(c.children):
         ok = c.split()
         count += 1
-        if not (count % 5000): print >> sys.stderr, n+1, count,  "/", len(atoms[n])
+        if not (count % 5000): print(n+1, count,  "/", len(atoms[n]), file=sys.stderr)
         if not ok: return
       for cc in c.children:
         split_all(cc)
 
     split_all(c)
     c.reorganize()
-    print >> sys.stderr, n+1, nstruc[n], CLUSTERING[clusterlevel], len(c.children), c.nodes
+    print(n+1, nstruc[n], CLUSTERING[clusterlevel], len(c.children), c.nodes, file=sys.stderr)
     #assert c.clusterlevel is None
     clusters.append([c])
 
@@ -568,8 +568,8 @@ for clusnr in to_decompose:
   done1, done2 = False, False
   while 1:
     if not (step % 5):
-      print >> sys.stderr, [len(c) for c in clusters]
-      print >> sys.stderr, [sum([cc.nodes for cc in c]) for c in clusters]
+      print([len(c) for c in clusters], file=sys.stderr)
+      print([sum([cc.nodes for cc in c]) for c in clusters], file=sys.stderr)
     step += 1
     if not done1:
       ok1 = decompose(clusnr)
@@ -582,8 +582,8 @@ for clusnr in to_decompose:
         if done1: break
         done2 = True
 
-print >> sys.stderr, [len(c) for c in clusters[::2]]
-print >> sys.stderr, [sum([cc.nodes for cc in c]) for c in clusters[::2]]
+print([len(c) for c in clusters[::2]], file=sys.stderr)
+print([sum([cc.nodes for cc in c]) for c in clusters[::2]], file=sys.stderr)
 
 #Verification
 for c in clusters[1::2]:
