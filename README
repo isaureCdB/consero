@@ -1,16 +1,25 @@
-# Example of usage:
+#################################
+# requirements
+#################################
+python2 and numpy
+python3 and numpy
 
-# See the meaning of each argument inside the bash scripts
+#################################
+# Example of usage
+#################################
 
 # convert data from AD3
-./prep-data.sh
+# !!! you might need to change which frag indices are dp3 or dp3a !!! 
+./prep-data.sh 
 
 # assemble fragments
-# args: first_frag last_frag Nb_of_chains min_overlap max_overlap
-./assemble.sh 1 4 10000 1.2 3.5
+# args: [first frag index] [last frag index] [Nb_of_chains] [min_overlap rmsd] [max_overlap rmsd]
+./assemble.sh 2 4 10000 1.2 3.5
 
 #create library of monomer conformations
-./build-library.sh
+# args: [list of pdbfiles to extract monomers from] [clustering cutoff]
+./build-library.sh pdbfiles.list 0.5
 
 # convert chains of fragments into full all-atom models
-./create_chains.sh
+# args: [chains] [first frag index] [last frag index]
+./create_chains.sh f2-4_1.5A_1000poses_1000meanrk.chains 2 4 
