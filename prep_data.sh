@@ -33,8 +33,8 @@ fi
 cd $d/Docking_solutions
 for dp in dp3 dp3a; do
     $FRAG/npy2pdb.py HE_$dp.npy template_HE_$dp.pdb > ../$dp.pdb
-    echo $dp.pdb >> ../pdbfiles.list
 done
+ls ../dp3*-aa.pdb > ../pdbfiles.list
 cd $d
 
 ##################################################
