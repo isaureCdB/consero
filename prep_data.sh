@@ -78,8 +78,8 @@ $FRAG/ind2prepostatom.sh dp3-aa.ind dp3-aa
 for dp in dp3 dp3a; do
     $FRAG/pdb2npy.py $dp-aa.pdb --outp $dp-aa.npy
     $FRAG/pdb2npy.py $dp\r.pdb --outp $dp\r.npy
-    $FRAG/select-npy.py $dp\r.npy $dp-preatoms.npy --atoms `cat $dp.preatoms`
-    $FRAG/select-npy.py $dp\r.npy $dp-postatoms.npy --atoms `cat $dp.postatoms`
+    $FRAG/select-npy.py $dp\r.npy $dp-preatoms.npy --atoms `cat $dp\r.preatoms`
+    $FRAG/select-npy.py $dp\r.npy $dp-postatoms.npy --atoms `cat $dp\r.postatoms`
 done
 
 link(){
@@ -93,6 +93,8 @@ link(){
   done
 }
 
+set -u +e
+
 for i in 1 3 5; do
   link dp3 $i
 done
@@ -100,6 +102,7 @@ done
 for i in 2 4 6; do
   link dp3a $i
 done
+set -u -e
 
 ######################################################################
 echo "compute the RMSD of each pose toward the bound structure"
