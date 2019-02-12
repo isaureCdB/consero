@@ -1,6 +1,6 @@
+#!/usr/bin/env python2
 ## Copyright (C) Isaure Chauvot de Beauchene (CNRS)
 
-#!/usr/bin/env python2
 
 import sys, os
 sys.path.append(os.environ["ATTRACTTOOLS"])

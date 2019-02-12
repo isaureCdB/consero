@@ -1,6 +1,6 @@
+#!/usr/bin/env python3
 ## Copyright (C) Isaure Chauvot de Beauchene (CNRS)
 
-#!/usr/bin/env python3
 import numpy as np
 import sys, argparse
 
