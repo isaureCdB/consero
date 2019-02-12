@@ -9,7 +9,7 @@ cutoff=$2
 mkdir monomers_library
 cd monomers_library
 set -u -e
-$FRAG/extract-monomers.py ../pdbfiles.list > monomers.list
+$FRAG/extract-monomers.py ../$pdbfiles > monomers.list
 
 for motif in `cat monomers.list` ;do
     #remove very similar fragments after fitting
