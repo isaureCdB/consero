@@ -2,7 +2,7 @@ d=`pwd`
 export FRAG=$d/scripts
 
 # pdbfiles.list = list of PDB files of docking poses
-pdbfile=$1
+pdbfiles=$1
 #clustering cutoff in Angström (advised: ~0.5)
 cutoff=$2
 
