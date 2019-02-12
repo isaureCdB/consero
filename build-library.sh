@@ -1,15 +1,14 @@
 d=`pwd`
 export FRAG=$d/scripts
 
-# pdbfiles.list = list of PDB files of docking poses
-pdbfiles=$1
 #clustering cutoff in Angström (advised: ~0.5)
-cutoff=$2
+cutoff=$1
 
 mkdir monomers_library
 cd monomers_library
 set -u -e
-$FRAG/extract-monomers.py ../$pdbfiles > monomers.list
+ls ../dp3*-aa.pdb > pdbfiles.list
+$FRAG/extract-monomers.py pdbfiles.list > monomers.list
 
 for motif in `cat monomers.list` ;do
     #remove very similar fragments after fitting
