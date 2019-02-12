@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # Copyright (C) Isaure Chauvot de Beauchene & Sjoerd J. de Vries (TUM)
 
 import sys, json, argparse
@@ -71,10 +71,10 @@ def chain(indices, sum_overlap_msds, meanrank):
     meanrank = "%.3f" % meanrank
     lrms = "%.3f" % lrms
     o = "%.3f" % o
-    print "#indices", lrms, meanrank, o,
-    for i in indices: print i,
-    for l in lr: print l,
-    print
+    print("#indices", lrms, meanrank, o, end=' ')
+    for i in indices: print(i, end=' ')
+    for l in lr: print(l, end=' ')
+    print()
     count += 1
 
 def walk(pos, curr, indices, sum_overlap_msds, curr_meanrank):
@@ -96,9 +96,9 @@ def walk(pos, curr, indices, sum_overlap_msds, curr_meanrank):
   for target in interactions[pos][curr]:
     walk(pos+1, target, new_indices, new_sum_overlap_msds, curr_meanrank)
 
-print "#header <mean (root-mean-sq) ligand rmsd> <mean (geometric mean) rank>  <rms-overlap-rmsd> <indices> <ligand rmsds>"
+print("#header <mean (root-mean-sq) ligand rmsd> <mean (geometric mean) rank>  <rms-overlap-rmsd> <indices> <ligand rmsds>")
 f = fragments[0]
 for ff in range(len(f)):
   walk(0, ff, (), 0, 0)
 
-print >> sys.stderr, count
+print(count, file=sys.stderr)
