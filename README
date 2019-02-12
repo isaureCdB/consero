@@ -18,7 +18,7 @@ python3 and numpy
 
 #create library of monomer conformations
 # args: [list of pdbfiles to extract monomers from] [clustering cutoff]
-./build-library.sh pdbfiles.list 0.5
+./build-library.sh 0.5
 
 # convert chains of fragments into full all-atom models
 # args: [chains] [first frag index] [last frag index]
