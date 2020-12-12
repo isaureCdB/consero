@@ -23,3 +23,17 @@ python3 and numpy
 # convert chains of fragments into full all-atom models
 # args: [chains] [first frag index] [last frag index]
 ./create_chains.sh f2-4_1.5A_1000poses_1000meanrk.chains 2 4 
+
+#################################
+# Statitics
+#################################
+
+The fragment library is converted into a flat table for quick search.
+
+Queries on the fragment library use 3 dictionaries:
+_ the data dictionnary, provided by structures.json (written when creating the database, at step 1)
+_ the chainschema (see make_chainschena.py) that describes the format of the data and how it can be queried
+_ the query "variables" dictionnary (see query.py), that contains description of the subdata we are interested in
+
+For details on the data formats, see make_chainschema.py
+For an example of query, see the jupyter-notebook exemple_stats.ipynb
