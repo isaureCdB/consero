@@ -1,3 +1,9 @@
+*Consero: assembling 3D fragments of regular polymers*
+
+Consero assembles 3D fragments (coordinates in PDB format) of polymers made of 2 alternated subunits ( sequence ababa... ).
+It has been primarily developed to assemble fragments of glycosaminoglycanes docked on a protein with the AUTODOCK software,
+but can in principle be used in the general case stated above.
+
 #################################
 # requirements
 #################################
