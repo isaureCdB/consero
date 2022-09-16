@@ -17,7 +17,7 @@ python3 and numpy
 
 ____________________________________________________________
 convert data from AutoDock3
-!!! you might need to change which frag indices are dp3 or dp3a !!! 
+!! you might need to change which frag indices are dp3 or dp3a !! 
 
 ./prep-data.sh 
 ____________________________________________________________
