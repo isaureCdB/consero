@@ -6,7 +6,7 @@ It has been primarily developed to assemble fragments of glycosaminoglycanes doc
 but can in principle be used in the general case stated above.
 
 #################################
-# requirements
+# Requirements
 #################################
 python2 and numpy
 python3 and numpy
